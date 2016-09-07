@@ -7,8 +7,10 @@
 //
 
 #import "ViewController.h"
-
-@interface ViewController ()
+#import "PopViewController.h"
+@interface ViewController (){
+    UIButton *button;
+}
 
 @end
 
@@ -16,12 +18,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+     self.title = @"第一页";
+     self.view.backgroundColor = [UIColor whiteColor];
+    
+    button = ({
+    UIButton   *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        btn.bounds = CGRectMake(0, 0, 100, 100);
+        btn.center = self.view.center;
+        btn.backgroundColor = [UIColor redColor];
+        [btn setTitle:@"第一页" forState:UIControlStateNormal];
+        [btn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:btn];
+        btn;
+     });
+   
+    
+    
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)btnClick{
+    PopViewController *vc = [[PopViewController alloc]init];
+    self.navigationController.delegate = vc;
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 @end

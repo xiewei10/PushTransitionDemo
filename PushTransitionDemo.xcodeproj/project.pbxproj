@@ -15,6 +15,9 @@
 		5DE31B521D801BFB00F06E95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DE31B501D801BFB00F06E95 /* LaunchScreen.storyboard */; };
 		5DE31B5D1D801BFC00F06E95 /* PushTransitionDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE31B5C1D801BFC00F06E95 /* PushTransitionDemoTests.m */; };
 		5DE31B681D801BFC00F06E95 /* PushTransitionDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE31B671D801BFC00F06E95 /* PushTransitionDemoUITests.m */; };
+		5DE31B781D801D1A00F06E95 /* PopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE31B771D801D1A00F06E95 /* PopViewController.m */; };
+		5DE31B7E1D801DD300F06E95 /* XWInteractiveManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE31B7B1D801DD300F06E95 /* XWInteractiveManager.m */; };
+		5DE31B7F1D801DD300F06E95 /* XWPushTransitionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE31B7D1D801DD300F06E95 /* XWPushTransitionManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,12 @@
 		5DE31B631D801BFC00F06E95 /* PushTransitionDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PushTransitionDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DE31B671D801BFC00F06E95 /* PushTransitionDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushTransitionDemoUITests.m; sourceTree = "<group>"; };
 		5DE31B691D801BFC00F06E95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DE31B761D801D1A00F06E95 /* PopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopViewController.h; sourceTree = "<group>"; };
+		5DE31B771D801D1A00F06E95 /* PopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopViewController.m; sourceTree = "<group>"; };
+		5DE31B7A1D801DD300F06E95 /* XWInteractiveManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWInteractiveManager.h; sourceTree = "<group>"; };
+		5DE31B7B1D801DD300F06E95 /* XWInteractiveManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWInteractiveManager.m; sourceTree = "<group>"; };
+		5DE31B7C1D801DD300F06E95 /* XWPushTransitionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWPushTransitionManager.h; sourceTree = "<group>"; };
+		5DE31B7D1D801DD300F06E95 /* XWPushTransitionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWPushTransitionManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +110,9 @@
 		5DE31B411D801BFB00F06E95 /* PushTransitionDemo */ = {
 			isa = PBXGroup;
 			children = (
+				5DE31B751D801CEF00F06E95 /* TransitionDemo */,
 				5DE31B451D801BFB00F06E95 /* AppDelegate.h */,
 				5DE31B461D801BFB00F06E95 /* AppDelegate.m */,
-				5DE31B481D801BFB00F06E95 /* ViewController.h */,
-				5DE31B491D801BFB00F06E95 /* ViewController.m */,
 				5DE31B4B1D801BFB00F06E95 /* Main.storyboard */,
 				5DE31B4E1D801BFB00F06E95 /* Assets.xcassets */,
 				5DE31B501D801BFB00F06E95 /* LaunchScreen.storyboard */,
@@ -138,6 +146,29 @@
 				5DE31B691D801BFC00F06E95 /* Info.plist */,
 			);
 			path = PushTransitionDemoUITests;
+			sourceTree = "<group>";
+		};
+		5DE31B751D801CEF00F06E95 /* TransitionDemo */ = {
+			isa = PBXGroup;
+			children = (
+				5DE31B791D801DC200F06E95 /* manager */,
+				5DE31B481D801BFB00F06E95 /* ViewController.h */,
+				5DE31B491D801BFB00F06E95 /* ViewController.m */,
+				5DE31B761D801D1A00F06E95 /* PopViewController.h */,
+				5DE31B771D801D1A00F06E95 /* PopViewController.m */,
+			);
+			name = TransitionDemo;
+			sourceTree = "<group>";
+		};
+		5DE31B791D801DC200F06E95 /* manager */ = {
+			isa = PBXGroup;
+			children = (
+				5DE31B7A1D801DD300F06E95 /* XWInteractiveManager.h */,
+				5DE31B7B1D801DD300F06E95 /* XWInteractiveManager.m */,
+				5DE31B7C1D801DD300F06E95 /* XWPushTransitionManager.h */,
+				5DE31B7D1D801DD300F06E95 /* XWPushTransitionManager.m */,
+			);
+			name = manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,9 +301,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DE31B781D801D1A00F06E95 /* PopViewController.m in Sources */,
+				5DE31B7F1D801DD300F06E95 /* XWPushTransitionManager.m in Sources */,
 				5DE31B4A1D801BFB00F06E95 /* ViewController.m in Sources */,
 				5DE31B471D801BFB00F06E95 /* AppDelegate.m in Sources */,
 				5DE31B441D801BFB00F06E95 /* main.m in Sources */,
+				5DE31B7E1D801DD300F06E95 /* XWInteractiveManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +450,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PushTransitionDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LS.com.PushTransitionDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -427,6 +462,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PushTransitionDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LS.com.PushTransitionDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -498,6 +534,7 @@
 				5DE31B6E1D801BFC00F06E95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5DE31B6F1D801BFC00F06E95 /* Build configuration list for PBXNativeTarget "PushTransitionDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +543,7 @@
 				5DE31B711D801BFC00F06E95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5DE31B721D801BFC00F06E95 /* Build configuration list for PBXNativeTarget "PushTransitionDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +552,7 @@
 				5DE31B741D801BFC00F06E95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
